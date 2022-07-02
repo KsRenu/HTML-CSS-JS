@@ -1,140 +1,57 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
-        
+        <title>Hall allocation</title>
         <style>
-            * {
-            margin: 0px; 
-            padding: 0px; 
-            box-sizing: border-box;
-        }
-        
-        
-        body
-        {
-        background-color: #ec907c;
-        background-image:url(https://media.istockphoto.com/photos/setting-the-page-on-fire-with-some-hard-work-picture-id868177762?k=20&m=868177762&s=612x612&w=0&h=IUwqQCBtPj3OnO-Y2muPGJonsiUNETXhjpb9bNlkhB8=);
-        background-repeat:no-repeat;
-        background-size: cover;
-        height:100%;
-        width:100%;
-        
-        }
-        
-        .header{
-        background-color:#FF5733 ;
-        height:10%;
-        
-        
-        }
-        
-        
-        
-        .login1
-        {
-        
-        margin-top:15%;
-        margin-left:35%;
-        
-        }
-        
-        .text
-        {
-        color:white;
-        font-size:30px;
-        font-family: Tahoma, "Trebuchet MS", sans-serif;
-        text-align: center;
-        
-        }
-        
-        #login
-        {
-        margin-top:5%;
-        margin-left:13%;
-        color:#e23415;
-        font-size:30px;
-        font-family: Tahoma, "Trebuchet MS", sans-serif;
-        
-        }
-        
-        
-        input
-        {
-        font-family:Ubuntu-Bold;
-        width:37%;
-        outline:none;
-        border:none;
-        color:#e23415;
-        font-size: 18px;
-        display:block;
-        background-color: #e6e6e6;
-        height:62px;
-        padding: 0 10px 0 30px;
-        opacity:0.8;
-        
-        }
-        
-        .button
-        {
-        width:37%;
-        height:10%;
-        text-align:center;
-        padding:0 10px 0 10px;
-        background-color:#e23415;
-        opacity:1.0;
-        color:white;
-        font-size:15px;
-        font-family: Tahoma, "Trebuchet MS", sans-serif;
-        cursor:pointer;
-        }
-        
-        .button:hover
-        {
-        background-color:#af561b;
-        }
-        
-        </style>
-        </head>
+        .left{
+          height: 100%;
+          width:40%;
+          float:left;
+          background-color: orangered;
+          text-align: center;
+          color:white;
+          font-size:xx-large;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .right{
+                height:100%;
+                width:60%;
+                float:right;
+                background-color: antiquewhite;
+                text-align: center;
+                font-size:medium;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            
+                a:link, a:visited {
+                     background-color: #f44336;
+                    color: white;
+                    height: 10%;
+                    width:20%;
+                    padding: 20px 35px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+              }
 
+          a:hover, a:active {
+              background-color: red;
+          }
+        </style>
     </head>
     <body>
-        
-        <div id="backgroundImage">
+        <div class="left">
+            <br>  <br>   <br>  <br>  <br>  <br>  <br>
+                <p>EXAM CELL AUTOMATION</p>
+                <br>  <br>   <br>  <br>  <br>  <br>   <br>  <br>   <br>  <br> 
         </div>
-        
-        <div class = "header" height="20%" width="20%">
-        
-        <p class="text">EXAM CELL AUTOMATION</p>
+        <div class="right">
+            <br>  <br>   <br>  <br>  <br>  <br> 
+           <a href="select_halls.html" target="_self"> SELECT HALLS</a><br> <br>
+           <a href="student_alloc.html" target="_self">STUDENT ALLOCATION</a><br> <br>
+           <a href="alloc_details" target="_self">ALLOCATION DETAILS</a><br> <br>
+           <a href="logout.html" target="_blank">LOGOUT</a>    <br>  <br>  <br>  
+           <br>  <br>   <br>  <br>  <br>  <br>   <br>  <br>   <br>  <br>  <br>  <br>   <br>   <br>  <br> 
         </div>
-        <div class = "login1">
-            <div>
-         <p id = "login"><b>Login</b></p><br>
-
-        <form method="POST" action="login">
-            {% csrf_token %}
-            <form name="myform" method="POST">
-                <div class="input">
-                <input type = "text" name="email" placeholder="Email" required>
-                <br><br>
-                <input type = "password" name="password1" placeholder="Password" required>
-                <br><br>
-               
-               <!----<input type="submit" value="LOGIN" class=button>-->
-               <button type="submit" class="button">LOGIN</button>
-                </div>
-               </form>
-               </div>
-              </div>
-              
-              </div>
-              {% if messages %}
-              {%for message in messages%}
-               <h1 style="color:orangered">{{message}}<h1>
-              {%endfor%}
-              {%endif%}
-        </form>
-        <br><br><br><br><br><br>
     </body>
-    </html>
-
-
+</html>
