@@ -1,37 +1,138 @@
-## Welcome to GitHub Pages
+<html>
+    <head>
+        <title>Login</title>
+        
+        <style>
+            * {
+            margin: 0px; 
+            padding: 0px; 
+            box-sizing: border-box;
+        }
+        
+        
+        body
+        {
+        background-color: #ec907c;
+        background-image:url(https://media.istockphoto.com/photos/setting-the-page-on-fire-with-some-hard-work-picture-id868177762?k=20&m=868177762&s=612x612&w=0&h=IUwqQCBtPj3OnO-Y2muPGJonsiUNETXhjpb9bNlkhB8=);
+        background-repeat:no-repeat;
+        background-size: cover;
+        height:100%;
+        width:100%;
+        
+        }
+        
+        .header{
+        background-color:#FF5733 ;
+        height:10%;
+        
+        
+        }
+        
+        
+        
+        .login1
+        {
+        
+        margin-top:15%;
+        margin-left:35%;
+        
+        }
+        
+        .text
+        {
+        color:white;
+        font-size:30px;
+        font-family: Tahoma, "Trebuchet MS", sans-serif;
+        text-align: center;
+        
+        }
+        
+        #login
+        {
+        margin-top:5%;
+        margin-left:13%;
+        color:#e23415;
+        font-size:30px;
+        font-family: Tahoma, "Trebuchet MS", sans-serif;
+        
+        }
+        
+        
+        input
+        {
+        font-family:Ubuntu-Bold;
+        width:37%;
+        outline:none;
+        border:none;
+        color:#e23415;
+        font-size: 18px;
+        display:block;
+        background-color: #e6e6e6;
+        height:62px;
+        padding: 0 10px 0 30px;
+        opacity:0.8;
+        
+        }
+        
+        .button
+        {
+        width:37%;
+        height:10%;
+        text-align:center;
+        padding:0 10px 0 10px;
+        background-color:#e23415;
+        opacity:1.0;
+        color:white;
+        font-size:15px;
+        font-family: Tahoma, "Trebuchet MS", sans-serif;
+        cursor:pointer;
+        }
+        
+        .button:hover
+        {
+        background-color:#af561b;
+        }
+        
+        </style>
+        </head>
 
-You can use the [editor on GitHub](https://github.com/KsRenu/HTML-CSS-JS.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+    </head>
+    <body>
+        
+        <div id="backgroundImage">
+        </div>
+        
+        <div class = "header" height="20%" width="20%">
+        
+        <p class="text">EXAM CELL AUTOMATION</p>
+        </div>
+        <div class = "login1">
+            <div>
+         <p id = "login"><b>Login</b></p><br>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KsRenu/HTML-CSS-JS.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+        <form method="POST" action="login">
+            {% csrf_token %}
+            <form name="myform" method="POST">
+                <div class="input">
+                <input type = "text" name="email" placeholder="Email" required>
+                <br><br>
+                <input type = "password" name="password1" placeholder="Password" required>
+                <br><br>
+               
+               <!----<input type="submit" value="LOGIN" class=button>-->
+               <button type="submit" class="button">LOGIN</button>
+                </div>
+               </form>
+               </div>
+              </div>
+              
+              </div>
+              {% if messages %}
+              {%for message in messages%}
+               <h1 style="color:orangered">{{message}}<h1>
+              {%endfor%}
+              {%endif%}
+        </form>
+        <br><br><br><br><br><br>
+    </body>
+    </html>
